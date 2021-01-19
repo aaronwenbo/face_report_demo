@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人脸报告</title>
+    <link href="/static/template.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="data:,">
+</head>
+    <body>
+        <div>
+            <h1>上传一张姿态端正的正面人脸照片</h1>
+            <br>
+            <form method="post" action="http://192.168.1.247:5001/upload" enctype="multipart/form-data">
+                <input type="file" size="30" name="file"/>
+                <br>
+                <br>
+                输入您的昵称
+                <br>
+                <label>
+                    <input type="text" class="txt_input" name="name" style="margin-top:15px;"/>
+                </label>
+                <input type="submit" value="提交" class="button-new" style="margin-top:15px;"/>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人脸报告</title>
+    <link rel="icon" href="data:,">
+    <link href="/static/template.css" rel="stylesheet" type="text/css">
+    <link href="/static/kinerLottery.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div>
+        <form method="post" action="" enctype="multipart/form-data">
+            <input type="file" size="30" name="file"/>
+            <br>
+            <label>
+                <input type="text" class="txt_input" name="name" style="margin-top:15px;"/>
+            </label>
+            <input type="submit" value="提交" class="button-new" style="margin-top:15px;"/>
+        </form>
+    </div>
+    <br><br>
+<h1>{{userinput}}的人脸报告</h1>
+{#    <div class="content">#}
+{#        <div>#}
+{#            <img src="{{ url_for('static', filename=imgPath) }}" width="400" height="400" alt=""/>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="contents2" id="text" style>
+        <div class="fg_con1">
+            <div class="santing">
+                <div class="santing_title">三庭测试结果</div>
+                <div>
+                    <img alt="三庭测试" src="data:image/jpeg;base64,{{ userdata['img_three_ting'] }}" >
+                </div>
+                <div>
+                    <span class="santing_jgl">你的上中下庭比例：</span>
+                    <span class="santing_jgr">{{ userdata["three_ting"] }}</span>
+                </div>
+                <div class="santing_r">
+                    <div class="clear"></div>
+                    <div class="santing_jgzs">
+                        三庭：指脸的长度比例，把脸的长度分为三个等分，从前额发际线至眉骨，从眉骨至鼻底，从鼻底至下颏，各占脸长的1/3。中下庭比例为1:1:1最美，您的上中下庭的比例为：
+                        <span style="font-weight: bold">{{ userdata["three_ting"] }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="santing">
+                <div class="santing_title">五眼测试结果</div>
+                <div>
+                    <img alt="五眼测试" src="data:image/jpeg;base64,{{ userdata['img_five_eye'] }}" >
+                </div>
+                <div>
+                    <span class="santing_jgl">你的五眼比例：</span>
+                    <span class="santing_jgr">{{ userdata["five_eye"] }}</span>
+                </div>
+                <div class="santing_r">
+                    <div class="clear"></div>
+                    <div class="santing_jgzs">
+                        五眼指脸的宽度比例，以眼形长度为单位，把脸的宽度分成五个等分，从左侧发际至右侧发际，为五只眼形。最佳黄金比例为1.0：1.0：1.0：1.0：1.0，您的五眼比例为：
+                        <span style="font-weight: bold">{{ userdata["five_eye"] }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="santing">
+                <div class="santing_title">小三庭测试结果</div>
+                <div>
+                    <img alt="小三庭测试" src="data:image/jpeg;base64,{{ userdata['img_small_three_ting'] }}" >
+                </div>
+                <div>
+                    <span class="santing_jgl">你的小三庭比例：</span>
+                    <span class="santing_jgr">{{ userdata["small_three_ting"] }}</span>
+                </div>
+                <div class="santing_r">
+                    <div class="clear"></div>
+                    <div class="santing_jgzs">
+                        小三庭：“鼻下点（鼻小柱与上唇交界）到口缝的距离是从口缝到颏下点距离的一半”会令下庭比例富有美感。1:2的比例会使人中偏短，下巴较长，视觉上鼻唇距离较近，若中面部的五官也很集中，就会呈现出集中型五官+下巴长的搭配，五官视觉冲击力较强，确实是容易产生美感的比例。您的比例为：
+                        <span style="font-weight: bold">{{ userdata["small_three_ting"] }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="santing">
+                <div class="santing_title">脸型测试结果</div>
+                <div>
+                    <img alt="脸型测试" src="data:image/jpeg;base64,{{ userdata['img_face_type'] }}" >
+                </div>
+                <div>
+                    <span class="santing_jgl">你的脸型：</span>
+                    <span class="santing_jgr">{{ userdata["face"]['face_type'] }}</span>
+                </div>
+                <div class="santing_r">
+                    <div class="clear"></div>
+                    <div class="santing_jgzs">
+                        {{ userdata["face"]['reason'] }}
+{#                        <span style="font-weight: bold">{{ userdata["small_three_ting"] }}</span>#}
+                    </div>
+                </div>
+            </div>
+            <div class="santing">
+                <div class="santing_title">鼻比例测试结果</div>
+                <div>
+                    <img alt="鼻比例测试" src="data:image/jpeg;base64,{{ userdata['img_nose_proportion'] }}" >
+                </div>
+                <div>
+                    <span class="santing_jgl">你的鼻比例：</span>
+                    <span class="santing_jgr">{{ userdata["nose"] }}</span>
+                </div>
+                <div class="santing_r">
+                    <div class="clear"></div>
+                    <div class="santing_jgzs">
+                        {{ userdata["nose"] }}
+{#                        <span style="font-weight: bold">{{ userdata["small_three_ting"] }}</span>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#<img src="/static/result/five_yan.jpg" width="1000" height="1415" alt="five_eye"/>#}
+{#<img src="/static/result/three_ting.jpg" width="400" height="564"  alt="three_ting"/>#}
+{#<img src="/static/result/small_three_ting.jpg" width="400" height="564"  alt="small_three_ting"/>#}
+</body>
+</html>
